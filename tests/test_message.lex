@@ -59,7 +59,17 @@ fn suite_pure() -> List[Result[Unit, Str]] {
   [test_create_surface_spec_example(), test_update_data_model_spec_example(), test_update_data_model_omitted_path(), test_delete_surface()]
 }
 
+# `lex test` discards run_all's return value and only checks for a
+# runtime error (confirmed against lex-cli's test_runner.rs source), so
+# a plain count_failures(...) return never actually gates CI. Force a
+# real runtime error (integer division by zero) when there are failures.
 fn run_all() -> Int {
-  count_failures(suite_pure())
+  let failures := count_failures(suite_pure())
+  let _crash_if_failed := if failures > 0 {
+    1 / 0
+  } else {
+    0
+  }
+  failures
 }
 
