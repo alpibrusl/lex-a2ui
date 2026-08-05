@@ -1,0 +1,8 @@
+[package]
+name        = "lex-a2ui"
+version     = "0.1.0"
+lex         = "0.10.7"
+description = "A2UI (Agent to UI) Protocol v1.0 message envelope types for Lex agent servers -- declarative, agent-generated UI over a JSON wire format."
+
+[dependencies]
+lex-schema = { git = "https://github.com/alpibrusl/lex-schema" }
