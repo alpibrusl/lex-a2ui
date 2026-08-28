@@ -66,3 +66,9 @@ or renderer. Treated as the lower-priority, higher-risk half of a
 two-package plan — `lex-ag-ui` is the near-term integration target;
 this package is here so the scaffolding exists when there's a concrete
 reason to render agent-declared UI rather than plain chat text.
+
+## License
+
+Copyright (c) 2026 lex-a2ui contributors.
+
+Licensed under the [EUPL-1.2](LICENSE) — the European Union Public Licence, as used across the `lex-*` ecosystem.
